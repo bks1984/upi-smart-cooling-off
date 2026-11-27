@@ -1,0 +1,20 @@
+### Health
+GET http://127.0.0.1:8000/health
+
+### Digital-arrest pattern (72-year-old, long video call, new payee)
+POST http://127.0.0.1:8000/v1/decide
+Content-Type: application/json
+
+< ./digital_arrest.json
+
+### KYC impersonation with screen-share
+POST http://127.0.0.1:8000/v1/decide
+Content-Type: application/json
+
+< ./kyc_screen_share.json
+
+### Legitimate rent to a known payee
+POST http://127.0.0.1:8000/v1/decide
+Content-Type: application/json
+
+< ./legit_rent.json

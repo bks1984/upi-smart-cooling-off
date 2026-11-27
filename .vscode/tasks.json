@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup: create venv & install requirements",
+      "type": "shell",
+      "command": "python -m venv .venv && ${command:python.interpreterPath} -m pip install -r requirements.txt",
+      "windows": { "command": "python -m venv .venv; .\\.venv\\Scripts\\pip install -r requirements.txt" },
+      "osx": { "command": "python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt" },
+      "linux": { "command": "python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Demo: score a sample digital-arrest payment",
+      "type": "shell",
+      "command": "curl -s -X POST http://127.0.0.1:8000/v1/decide -H 'Content-Type: application/json' -d @examples/digital_arrest.json",
+      "problemMatcher": []
+    }
+  ]
+}

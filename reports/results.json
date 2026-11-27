@@ -1,0 +1,427 @@
+{
+  "model_metrics": {
+    "roc_auc": 0.9912060636320486,
+    "pr_auc": 0.7530570923417446,
+    "base_rate": 0.0039189471485272616,
+    "n_txn": 119675,
+    "n_scam": 469,
+    "recall_at_0.5%_alerts": 0.7505330490405118,
+    "value_recall_at_0.5%_alerts": 0.8402228764277136,
+    "recall_at_1.0%_alerts": 0.8486140724946695,
+    "value_recall_at_1.0%_alerts": 0.9187838925256829,
+    "recall_at_2.0%_alerts": 0.906183368869936,
+    "value_recall_at_2.0%_alerts": 0.9642825216888653,
+    "recall_at_5.0%_alerts": 0.9573560767590619,
+    "value_recall_at_5.0%_alerts": 0.9864315837680533,
+    "feature_importance_gain": {
+      "amount_to_median_ratio": 0.35944804268158204,
+      "log_payee_account_age": 0.2100861281100325,
+      "log_payer_new_payee_amt_7d": 0.07945144832104864,
+      "payee_reported_cfcfrms": 0.07790879042060896,
+      "age": 0.04422325037545868,
+      "payee_fan_in_24h": 0.03551935051986997,
+      "odd_hour": 0.030280124901718074,
+      "payee_passthrough_ratio": 0.029699059181459157,
+      "payee_mule_score": 0.029466230170374363,
+      "payee_is_new": 0.027055810223945244,
+      "balance_drain_ratio": 0.015566517088455665,
+      "log_amount": 0.014426907874102581,
+      "tenure_months": 0.01050322915690702,
+      "digital_literacy": 0.007742058449103193,
+      "call_duration_min": 0.007484106398898646,
+      "log_payer_amt_24h": 0.00613872113902444,
+      "payer_txn_count_24h": 0.005896429317565633,
+      "city_tier": 0.0036080646066252507,
+      "remark_risk_kw": 0.0015898878173029722,
+      "remote_access_app": 0.0014143361370357434,
+      "screen_share_active": 0.0013025900376430837,
+      "caller_unknown": 0.0005082676517723958,
+      "new_device_7d": 0.00031764459272863127,
+      "is_vulnerable": 0.00016808781453468284,
+      "on_active_call": 8.528942355293822e-05,
+      "payer_txn_count_1h": 7.172617585225147e-05,
+      "video_call": 3.2829881367896337e-05,
+      "caller_voip_or_intl": 5.0715314293645495e-06,
+      "sim_swap_7d": 0.0
+    },
+    "best_iteration": 332,
+    "n_train": 174273,
+    "n_valid": 66339
+  },
+  "thresholds": {
+    "el_nudge": 10,
+    "el_cool": 500,
+    "el_hold": 1000,
+    "p_block": 0.85,
+    "trusted_payee_p": 0.05
+  },
+  "policies": {
+    "P0_status_quo": {
+      "scam_value_total": 25464283.678628623,
+      "scam_value_prevented": 0.0,
+      "scam_value_lost": 25464283.678628623,
+      "prevention_rate": 0.0,
+      "prevention_by_typology": {
+        "kyc_impersonation": 0.0,
+        "job_task": 0.0,
+        "investment": 0.0,
+        "digital_arrest": 0.0,
+        "sextortion": 0.0
+      },
+      "legit_friction_cost": 0.0,
+      "net_benefit": 0.0,
+      "legit_delayed_pct": 0.0,
+      "legit_delayed_count": 0.0,
+      "legit_over10k_delayed_pct": 0.0,
+      "legit_nudged_pct": 0.0,
+      "legit_blocked_pct": 0.0,
+      "action_mix_legit": {
+        "allow": 1.0
+      },
+      "action_mix_scam": {
+        "allow": 1.0
+      },
+      "n_legit": 119206,
+      "n_scam": 469
+    },
+    "P1_rbi_flat_10k": {
+      "scam_value_total": 25464283.678628623,
+      "scam_value_prevented": 12063172.245378412,
+      "scam_value_lost": 13401111.43325021,
+      "prevention_rate": 0.4737291022053236,
+      "prevention_by_typology": {
+        "kyc_impersonation": 0.3903349721567341,
+        "job_task": 0.49733813271613153,
+        "investment": 0.5399166134579592,
+        "digital_arrest": 0.05897721798848916,
+        "sextortion": 0.24544687713292307
+      },
+      "legit_friction_cost": 1610640.0,
+      "net_benefit": 10452532.245378412,
+      "legit_delayed_pct": 0.09007600288576079,
+      "legit_delayed_count": 10737.6,
+      "legit_over10k_delayed_pct": 0.5120457796852647,
+      "legit_nudged_pct": 0.0,
+      "legit_blocked_pct": 0.0,
+      "action_mix_legit": {
+        "allow": 0.8240860359377884,
+        "cool_60": 0.17591396406221163
+      },
+      "action_mix_scam": {
+        "cool_60": 0.7356076759061834,
+        "allow": 0.26439232409381663
+      },
+      "n_legit": 119206,
+      "n_scam": 469
+    },
+    "P2_flat_25k": {
+      "scam_value_total": 25464283.67862863,
+      "scam_value_prevented": 9924776.078026649,
+      "scam_value_lost": 15539507.60060198,
+      "prevention_rate": 0.3897528084151921,
+      "prevention_by_typology": {
+        "kyc_impersonation": 0.35798494498829364,
+        "job_task": 0.32661022056760797,
+        "investment": 0.45517631405290443,
+        "digital_arrest": 0.05897721798848916,
+        "sextortion": 0.16085632977712372
+      },
+      "legit_friction_cost": 613380.0,
+      "net_benefit": 9311396.078026649,
+      "legit_delayed_pct": 0.03430364243410567,
+      "legit_delayed_count": 4089.2000000000003,
+      "legit_over10k_delayed_pct": 0.19500238435860753,
+      "legit_nudged_pct": 0.0,
+      "legit_blocked_pct": 0.0,
+      "action_mix_legit": {
+        "allow": 0.93259567471436,
+        "cool_60": 0.06740432528563998
+      },
+      "action_mix_scam": {
+        "cool_60": 0.5010660980810234,
+        "allow": 0.4989339019189765
+      },
+      "n_legit": 119206,
+      "n_scam": 469
+    },
+    "P3_smart_cooling_off": {
+      "scam_value_total": 25464283.678628635,
+      "scam_value_prevented": 21981843.665055487,
+      "scam_value_lost": 3482440.0135731488,
+      "prevention_rate": 0.8632421764726157,
+      "prevention_by_typology": {
+        "kyc_impersonation": 0.726098553945128,
+        "job_task": 0.7825212590014757,
+        "investment": 0.9167457814230154,
+        "digital_arrest": 0.6204883991676213,
+        "sextortion": 0.736705402901624
+      },
+      "legit_friction_cost": 189850.0,
+      "net_benefit": 21791993.665055487,
+      "legit_delayed_pct": 0.002927704981292888,
+      "legit_delayed_count": 349.0,
+      "legit_over10k_delayed_pct": 0.01335240820219361,
+      "legit_nudged_pct": 0.01800244954113048,
+      "legit_blocked_pct": 0.00014261027129506903,
+      "action_mix_legit": {
+        "allow": 0.9789272352062816,
+        "nudge": 0.01800244954113048,
+        "hold_callback": 0.002072043353522474,
+        "cool_60": 0.0008556616277704143,
+        "block": 0.00014261027129506903
+      },
+      "action_mix_scam": {
+        "block": 0.4946695095948827,
+        "hold_callback": 0.2281449893390192,
+        "allow": 0.11940298507462686,
+        "nudge": 0.11513859275053305,
+        "cool_60": 0.042643923240938165
+      },
+      "n_legit": 119206,
+      "n_scam": 469,
+      "guardrail_hits": {
+        "trusted_payee": 85888,
+        "risk_score": 33530,
+        "high_risk_block": 243,
+        "cfcfrms_mule_hit": 6,
+        "coached_victim_callback": 5,
+        "rbi_opt2_vulnerable": 3
+      }
+    }
+  },
+  "stress_test": [
+    {
+      "noise_sigma": 0.0,
+      "roc_auc": 0.9895593559045465,
+      "pr_auc": 0.7251829713150791,
+      "prevention_rate": 0.8632421764726157,
+      "legit_delayed_pct": 0.002927704981292888,
+      "legit_blocked_pct": 0.00014261027129506903,
+      "net_benefit": 21791998.665055487
+    },
+    {
+      "noise_sigma": 1.0,
+      "roc_auc": 0.9860058059354848,
+      "pr_auc": 0.7150070122746848,
+      "prevention_rate": 0.8587656520507001,
+      "legit_delayed_pct": 0.0040182541147257686,
+      "legit_blocked_pct": 8.388839487945237e-05,
+      "net_benefit": 21635027.177281536
+    },
+    {
+      "noise_sigma": 2.0,
+      "roc_auc": 0.9782233239286513,
+      "pr_auc": 0.6336600120625181,
+      "prevention_rate": 0.8645203890855653,
+      "legit_delayed_pct": 0.006669127392916464,
+      "legit_blocked_pct": 0.00030199822156602854,
+      "net_benefit": 21594537.433633238
+    },
+    {
+      "noise_sigma": 3.0,
+      "roc_auc": 0.9617743121715049,
+      "pr_auc": 0.5406423129836574,
+      "prevention_rate": 0.8601888816740334,
+      "legit_delayed_pct": 0.012709091824237035,
+      "legit_blocked_pct": 0.0010402160965052095,
+      "net_benefit": 21021093.70014992
+    },
+    {
+      "noise_sigma": 4.0,
+      "roc_auc": 0.9453957022741124,
+      "pr_auc": 0.4565087066607221,
+      "prevention_rate": 0.8572898295346298,
+      "legit_delayed_pct": 0.022649866617452143,
+      "legit_blocked_pct": 0.003842088485478919,
+      "net_benefit": 19933831.41407298
+    },
+    {
+      "noise_sigma": 5.0,
+      "roc_auc": 0.9279497422301012,
+      "pr_auc": 0.39915783047594666,
+      "prevention_rate": 0.8661157881875234,
+      "legit_delayed_pct": 0.03379024545744342,
+      "legit_blocked_pct": 0.009613610053185243,
+      "net_benefit": 18508048.128946133
+    }
+  ],
+  "sample_decisions": [
+    {
+      "txn_id": 240622,
+      "amount": 8160.0,
+      "age": 41,
+      "payee_is_new": true,
+      "p_scam": 0.9285714285714286,
+      "action": "block",
+      "rule": "high_risk_block",
+      "reasons": [
+        "High mule-account score for beneficiary",
+        "Beneficiary account is newly opened",
+        "Unusual time of day"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "legit"
+    },
+    {
+      "txn_id": 240713,
+      "amount": 87590.0,
+      "age": 31,
+      "payee_is_new": false,
+      "p_scam": 1.0,
+      "action": "block",
+      "rule": "high_risk_block",
+      "reasons": [
+        "Beneficiary account is newly opened",
+        "High mule-account score for beneficiary",
+        "Beneficiary moves money out quickly (pass-through)"
+      ],
+      "warning": "Guaranteed-return trading / IPO apps that ask you to pay individuals are a top scam in India.",
+      "truth": "investment"
+    },
+    {
+      "txn_id": 240720,
+      "amount": 9680.0,
+      "age": 44,
+      "payee_is_new": true,
+      "p_scam": 0.26666666666666666,
+      "action": "hold_callback",
+      "rule": "risk_score",
+      "reasons": [
+        "Unusual time of day",
+        "Beneficiary moves money out quickly (pass-through)",
+        "Amount far above customer's normal"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "investment"
+    },
+    {
+      "txn_id": 240763,
+      "amount": 18500.0,
+      "age": 41,
+      "payee_is_new": true,
+      "p_scam": 0.2857142857142857,
+      "action": "hold_callback",
+      "rule": "risk_score",
+      "reasons": [
+        "Amount far above customer's normal",
+        "Rising payments to new beneficiaries this week",
+        "Unusual time of day"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "legit"
+    },
+    {
+      "txn_id": 240638,
+      "amount": 7480.0,
+      "age": 54,
+      "payee_is_new": true,
+      "p_scam": 0.11904761904761904,
+      "action": "cool_60",
+      "rule": "risk_score",
+      "reasons": [
+        "High mule-account score for beneficiary",
+        "Unusual time of day",
+        "Beneficiary moves money out quickly (pass-through)"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "investment"
+    },
+    {
+      "txn_id": 241001,
+      "amount": 2420.0,
+      "age": 34,
+      "payee_is_new": true,
+      "p_scam": 0.20930232558139536,
+      "action": "cool_60",
+      "rule": "risk_score",
+      "reasons": [
+        "High mule-account score for beneficiary",
+        "Customer age profile is high-risk for this pattern",
+        "Beneficiary moves money out quickly (pass-through)"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "legit"
+    },
+    {
+      "txn_id": 240649,
+      "amount": 7760.0,
+      "age": 30,
+      "payee_is_new": true,
+      "p_scam": 0.002325581395348837,
+      "action": "nudge",
+      "rule": "risk_score",
+      "reasons": [
+        "Beneficiary moves money out quickly (pass-through)",
+        "Customer age profile is high-risk for this pattern",
+        "Unusual time of day"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "legit"
+    },
+    {
+      "txn_id": 240652,
+      "amount": 22050.0,
+      "age": 74,
+      "payee_is_new": true,
+      "p_scam": 0.0008933889219773674,
+      "action": "nudge",
+      "rule": "risk_score",
+      "reasons": [
+        "Unusual time of day",
+        "Beneficiary moves money out quickly (pass-through)",
+        "Amount far above customer's normal"
+      ],
+      "warning": "This payment looks unusual. Only continue if you personally know the receiver.",
+      "truth": "legit"
+    }
+  ],
+  "assumptions": {
+    "friction_cost": {
+      "allow": 0.0,
+      "nudge": 5.0,
+      "cool_60": 150.0,
+      "hold_callback": 560.0,
+      "block": 1500.0
+    },
+    "victim_share": 0.012,
+    "effectiveness": {
+      "investment": [
+        0.1,
+        0.35,
+        0.55,
+        0.75
+      ],
+      "digital_arrest": [
+        0.03,
+        0.1,
+        0.5,
+        0.6
+      ],
+      "job_task": [
+        0.12,
+        0.35,
+        0.55,
+        0.75
+      ],
+      "kyc_impersonation": [
+        0.2,
+        0.45,
+        0.65,
+        0.85
+      ],
+      "sextortion": [
+        0.05,
+        0.15,
+        0.3,
+        0.6
+      ]
+    },
+    "coached_whitelist_prob": {
+      "investment": 0.5,
+      "digital_arrest": 0.65,
+      "job_task": 0.4,
+      "kyc_impersonation": 0.3,
+      "sextortion": 0.35
+    }
+  }
+}

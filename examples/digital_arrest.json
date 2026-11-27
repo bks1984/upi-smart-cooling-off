@@ -1,0 +1,4 @@
+{"amount": 185000, "age": 72, "balance_before": 240000, "median_amt": 3000,
+ "on_active_call": true, "call_duration_min": 140, "caller_unknown": true, "caller_voip_or_intl": true,
+ "video_call": true, "hour": 23, "payee_is_new": true, "payee_account_age_days": 30,
+ "payee_fan_in_24h": 4, "payee_passthrough_ratio": 0.85, "payee_mule_score": 0.55}

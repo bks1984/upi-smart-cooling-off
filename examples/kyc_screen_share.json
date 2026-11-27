@@ -1,0 +1,4 @@
+{"amount": 48000, "age": 58, "balance_before": 90000, "median_amt": 2500,
+ "on_active_call": true, "call_duration_min": 12, "caller_unknown": true,
+ "screen_share_active": true, "remote_access_app": true,
+ "payee_is_new": true, "payee_account_age_days": 40, "payee_mule_score": 0.4}

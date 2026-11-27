@@ -1,0 +1,4 @@
+{
+  "recommendations": ["ms-python.python", "ms-python.debugpy", "ms-python.black-formatter",
+                      "ms-toolsai.jupyter", "humao.rest-client"]
+}
